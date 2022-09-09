@@ -1,0 +1,38 @@
+main{
+    min-height: calc(100vh - 80px);
+    height: auto;
+    width: 100%;
+    background-color: #424242;
+    padding: 2rem 0;
+}
+
+.contenedor{
+    padding: 50px 0;
+    width: 80%;
+    margin: auto;
+}
+.contenedor-b{
+    text-align: center;
+    padding: 50px ;
+}
+.pokemons{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.boton{
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    background-color: #e3350d;
+    padding: 1rem 2rem;
+    filter: drop-shadow(2px 2px 0px #b32b0b);
+    transition: all .25s;
+}
+
+.boton:hover, .boton:active{
+
+    background-color:  #b32b0b;
+
+}

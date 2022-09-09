@@ -1,0 +1,30 @@
+.navbar{
+    position: sticky;
+    top:0;
+    height: 80px;
+    width: auto;
+    background-color: #e3350d;
+    display: flex ;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    z-index: 1;
+}
+
+.logo img{
+    height: 60px;
+}
+
+.buscador{
+    height: 80%;
+    width: 40%;
+    border: solid 1px white;
+    border-radius:15px;
+    font-size: 1rem;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+
+}
+
+.buscador::placeholder { color: white;}

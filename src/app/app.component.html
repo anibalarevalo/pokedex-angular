@@ -1,0 +1,14 @@
+<app-navbar (filtrar)="searchPokemon($event)"></app-navbar>
+<main>
+  <div class="contenedor">
+    <h1>Pokedex en angular</h1>
+    <div class="pokemons">
+      <app-tarjeta [datos]="pokemon" *ngFor=" let pokemon of pokemonsFiltrados"></app-tarjeta>
+    </div>
+
+  </div>
+  <div *ngIf="mostrarMas" class="contenedor-b">
+    <a class="boton" (click)="loadMore()">Ver mas</a>
+  </div>
+
+</main>
