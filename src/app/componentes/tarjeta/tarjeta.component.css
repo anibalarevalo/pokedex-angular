@@ -54,9 +54,9 @@ img{
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(90deg, rgb(51, 51, 51) 0px, rgba(90, 90, 90, 0.9) 40px, rgb(51, 51, 51) 80px );
-  background-size: 300%;
+  background-size: 200%;
   background-position: 100% 0;
-  animation: shimmer 2.5s infinite;
+  animation: shimmer 1.5s infinite;
 }
 
 @keyframes shimmer {
@@ -114,4 +114,21 @@ img{
       100% {
         transform: rotate(360deg);
       }
+}
+
+.star {
+  visibility:hidden;
+  font-size:30px;
+  height: 30px;
+  width: 30px;
+  cursor:pointer;
+}
+.star:before {
+ content: "✨";
+ position: absolute;
+ visibility:visible;
+}
+.star:checked:before {
+ content: "✖";
+ position: absolute;
 }

@@ -15,6 +15,7 @@ export class TarjetaComponent implements OnInit {
 
   pokemon: any 
   cargando = true;
+  shiny = false;
 
   @Input() datos: data = {
     name: '',
@@ -29,6 +30,11 @@ export class TarjetaComponent implements OnInit {
     this.http.get(this.datos.url)
     .subscribe( (res:any) => {this.pokemon = res;}, err => console.log(err))
 
+  }
+
+  mostrarShiny(){
+    this.cargando =true
+    this.shiny = !this.shiny
   }
 
 }
