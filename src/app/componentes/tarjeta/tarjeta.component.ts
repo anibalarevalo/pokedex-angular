@@ -15,6 +15,7 @@ export class TarjetaComponent implements OnInit {
 
   pokemon: any 
   cargando = true;
+  cargandoImg = true;
   shiny = false;
 
   @Input() datos: data = {
@@ -28,12 +29,12 @@ export class TarjetaComponent implements OnInit {
   ngOnInit(): void {
     
     this.http.get(this.datos.url)
-    .subscribe( (res:any) => {this.pokemon = res;}, err => console.log(err))
+    .subscribe( (res:any) => {this.pokemon = res;this.cargando = false}, err => console.log(err))
 
   }
 
   mostrarShiny(){
-    this.cargando =true
+    this.cargandoImg =true
     this.shiny = !this.shiny
   }
 

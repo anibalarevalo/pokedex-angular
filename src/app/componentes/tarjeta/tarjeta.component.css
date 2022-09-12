@@ -12,10 +12,20 @@
     overflow: hidden;
 }
 
-img{
+.pokemon-img{
     border-radius: 50%;
     width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
     
+  }
+
+  .pokemon-img img{
+    width: 80%;
   }
 
  .contenedor:hover img{
@@ -96,8 +106,18 @@ img{
 .dark  {background-color: #705746}
 .steel {background-color: #B7B7CE}
 .fairy {background-color: #D685AD}
+
+.loadingContainer{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .loading{
-    border: 4px solid rgba(0, 0, 0, 0.1);
+  border: 4px solid rgba(0, 0, 0, 0.1);
   width: 36px;
   height: 36px;
   border-radius: 50%;

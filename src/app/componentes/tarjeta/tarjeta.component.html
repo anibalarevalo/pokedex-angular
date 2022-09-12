@@ -3,7 +3,12 @@
 
     <p>#{{pokemon?.id}}</p>
     <!-- <p>{{pokemon?.types[0].type.name}}</p> -->
-    <img id="pokemonImg" [src]="!shiny ? pokemon?.sprites.front_default : pokemon?.sprites.front_shiny " [ngClass]="pokemon?.types[0].type.name" (load)="cargando=false" /> 
+    <div [ngClass]="pokemon?.types[0].type.name" class="pokemon-img">
+        <img  [src]="!shiny ? pokemon?.sprites.front_default : pokemon?.sprites.front_shiny "  (load)="cargandoImg=false" />
+        <div *ngIf="cargandoImg" class="loadingContainer" [ngClass]="pokemon?.types[0].type.name">
+            <div class="loading"></div>
+        </div>
+    </div>
     <a style="text-transform: capitalize">{{pokemon?.name}}</a>
     <p class="tipos"><span [ngClass]="tipo.type.name" *ngFor="let tipo of pokemon?.types">{{tipo.type.name}}</span> </p>
     <input type="checkbox" class="star" (click)="mostrarShiny()"/>
