@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PokemonService {
-  private baseUrl = 'https://pokeapi.co/api/v2/pokemon';
-
+  private baseUrl = 'https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0';
+                
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
