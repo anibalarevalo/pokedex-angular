@@ -1,20 +1,19 @@
 <app-navbar (filtrar)="searchPokemon($event)"></app-navbar>
 <main>
   <div class="contenedor">
-  <div *ngIf="pokemonsFiltrados.length > 0; else sinResultados">
-
-      <h1>Pokedex en angular</h1>
+    <div *ngIf="pokemonsFiltrados.length > 0; else sinResultados">
+      <h1 class="text-3xl mb-8">Pokedex en angular</h1>
       <div class="pokemons">
-        <app-tarjeta [datos]="pokemon" *ngFor=" let pokemon of pokemonsFiltrados"></app-tarjeta>
+        <app-tarjeta [datos]="pokemon.name" *ngFor=" let pokemon of pokemonsFiltrados"></app-tarjeta>
       </div>
 
       <div *ngIf="mostrarMas" class="contenedor-b">
         <a class="boton" (click)="loadMore()">Ver mas</a>
       </div>
+    </div>
   </div>
-  </div>
-  
 </main>
+
 <ng-template #sinResultados>
-  <h1 style="text-align: center;">No hay pokemons que mostar</h1>
+  <h1 style="text-align: center;">No hay pokemons que mostrar</h1>
 </ng-template>
