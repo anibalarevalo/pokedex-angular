@@ -1,30 +1,17 @@
-.navbar{
-    position: sticky;
-    top:0;
-    height: 80px;
-    width: auto;
-    background-color: #e3350d;
-    display: flex ;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 80px;
-    z-index: 1;
+.navbar {
+  @apply sticky top-0 h-[80px] w-auto bg-[#F44910] z-[1] py-0 px-[80px] flex items-center justify-between;
 }
 
-.logo img{
-    height: 60px;
+.logo img {
+  @apply h-[60px];
 }
 
-.buscador{
-    height: 80%;
-    width: 40%;
-    border: solid 1px white;
-    border-radius:15px;
-    font-size: 1rem;
-    padding-left: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: white;
-
+.buscador {
+  @apply h-[80%] w-[40%] text-[1rem] pl-[10px] bg-[#fdfaf2] text-white;
+  border: solid 1px white;
+  border-radius: 15px;
 }
 
-.buscador::placeholder { color: white;}
+.buscador::placeholder {
+  @apply text-[#acd0d6]
+}
