@@ -1,61 +1,66 @@
-.contenedor{
-    position: relative;
-    border-radius: 15px;
-    min-height: 250px;
-    background-color: rgb(51, 51, 51);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    gap: 10px;
-    overflow: hidden;
+.contenedor {
+  position: relative;
+  border-radius: 15px;
+  min-height: 250px;
+  background-color: rgb(51, 51, 51);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  overflow: hidden;
 }
 
-.pokemon-img{
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    
-  }
+.pokemon-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 
-  .pokemon-img img{
-    width: 80%;
-  }
+}
 
- .contenedor:hover img{
-  animation-play-state:running;
+.pokemon-img img {
+  width: 80%;
+}
+
+.contenedor:hover img {
+  animation-play-state: running;
   animation-fill-mode: forwards;
-    animation: temblar .5s;
+  animation: temblar .5s;
+}
+
+@keyframes temblar {
+  0% {
+    transform: rotate(0deg);
   }
 
-  @keyframes temblar {
-    0% {
-       transform: rotate(0deg);
-      }
-    20% {
-        transform: rotate(20deg);
-       }
-    40% {
-        transform: rotate(-20deg);
-       }
-      60% {
-        transform: rotate(20deg);
-       }
-       80% {
-        transform: rotate(-20deg);
-       }
-      100% {
-        transform: rotate(0deg);
-       }
+  20% {
+    transform: rotate(20deg);
   }
 
-.preloader{
+  40% {
+    transform: rotate(-20deg);
+  }
+
+  60% {
+    transform: rotate(20deg);
+  }
+
+  80% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.preloader {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -63,7 +68,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(90deg, rgb(51, 51, 51) 0px, rgba(90, 90, 90, 0.9) 40px, rgb(51, 51, 51) 80px );
+  background-image: linear-gradient(90deg, rgb(51, 51, 51) 0px, rgba(90, 90, 90, 0.9) 40px, rgb(51, 51, 51) 80px);
   background-size: 200%;
   background-position: 100% 0;
   animation: shimmer 1.5s infinite;
@@ -71,52 +76,105 @@
 
 @keyframes shimmer {
   to {
-      background-position: -100% 0;
-    }
+    background-position: -100% 0;
+  }
 }
 
-.tipos{
+.tipos {
   display: flex;
   justify-content: space-between;
   gap: 10px
 }
 
-.tipos span{
+.tipos span {
   font-size: 0.8rem;
   text-transform: uppercase;
   padding: 2px 5px;
   font-weight: bold;
 }
 
-.normal{background-color:#A8A77A } 
-.fire {background-color:#EE8130 } 
-.water {background-color: #6390F0}
-.electric{background-color: #F7D02C}
-.grass {background-color: #7AC74C}
-.ice {background-color: #96D9D6}
-.fighting {background-color: #C22E28}
-.poison {background-color: #A33EA1}
-.ground {background-color: #E2BF65}
-.flying {background-color: #A98FF3}
-.psychic {background-color: #F95587}
-.bug {background-color: #A6B91A}
-.rock {background-color: #B6A136}
-.ghost {background-color: #735797}
-.dragon{background-color: #6F35FC}
-.dark  {background-color: #705746}
-.steel {background-color: #B7B7CE}
-.fairy {background-color: #D685AD}
+.normal {
+  background-color: #A8A77A
+}
 
-.loadingContainer{
+.fire {
+  background-color: #EE8130
+}
+
+.water {
+  background-color: #6390F0
+}
+
+.electric {
+  background-color: #F7D02C
+}
+
+.grass {
+  background-color: #7AC74C
+}
+
+.ice {
+  background-color: #96D9D6
+}
+
+.fighting {
+  background-color: #C22E28
+}
+
+.poison {
+  background-color: #A33EA1
+}
+
+.ground {
+  background-color: #E2BF65
+}
+
+.flying {
+  background-color: #A98FF3
+}
+
+.psychic {
+  background-color: #F95587
+}
+
+.bug {
+  background-color: #A6B91A
+}
+
+.rock {
+  background-color: #B6A136
+}
+
+.ghost {
+  background-color: #735797
+}
+
+.dragon {
+  background-color: #6F35FC
+}
+
+.dark {
+  background-color: #705746
+}
+
+.steel {
+  background-color: #B7B7CE
+}
+
+.fairy {
+  background-color: #D685AD
+}
+
+.loadingContainer {
   position: absolute;
   height: 100%;
   width: 100%;
   display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.loading{
+.loading {
   border: 4px solid rgba(0, 0, 0, 0.1);
   width: 36px;
   height: 36px;
@@ -127,28 +185,30 @@
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-      }
-    
-      100% {
-        transform: rotate(360deg);
-      }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .star {
-  visibility:hidden;
-  font-size:30px;
+  visibility: hidden;
+  font-size: 30px;
   height: 30px;
   width: 30px;
-  cursor:pointer;
+  cursor: pointer;
 }
+
 .star:before {
- content: "✨";
- position: absolute;
- visibility:visible;
+  content: "✨";
+  position: absolute;
+  visibility: visible;
 }
+
 .star:checked:before {
- content: "✖";
- position: absolute;
+  content: "✖";
+  position: absolute;
 }

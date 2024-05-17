@@ -6,17 +6,19 @@ import { PokemonService } from './services/pokemon.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  url: string = '?limit=1302&offset=0'
   pokemons: any = [];
   pokemonsFiltrados: any = [];
   n: number = 1;
+  m: number = 10;
   mostrarMas = true;
 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
-    this.pokemonService.getData().subscribe({
+    this.pokemonService.getData(this.url).subscribe({
       next: (data: any) => {
-        this.pokemonsFiltrados = [...data.results].splice(0, 25);
+        this.pokemonsFiltrados = [...data.results].splice(0, this.m);
         this.pokemons = data.results;
       },
       error: (error: any) => {
@@ -27,18 +29,17 @@ export class AppComponent implements OnInit {
 
   searchPokemon(e: string) {
     if (e) {
-      this.pokemonsFiltrados = this.pokemons.filter((p: any) => p.name.toLowerCase().includes(e.toLowerCase())).splice(0, 25);
+      this.pokemonsFiltrados = this.pokemons.filter((p: any) => p.name.toLowerCase().includes(e.toLowerCase())).splice(0, this.m);
       this.mostrarMas = false
     } else {
-      this.pokemonsFiltrados = [... this.pokemons].splice(0, 25)
+      this.pokemonsFiltrados = [... this.pokemons].splice(0, this.m)
       this.mostrarMas = true
     }
     console.log(this.mostrarMas)
-
   }
 
   loadMore() {
-    this.pokemonsFiltrados = this.pokemonsFiltrados.concat([... this.pokemons].splice(25 * this.n, 25))
+    this.pokemonsFiltrados = this.pokemonsFiltrados.concat([... this.pokemons].splice(this.m * this.n, this.m))
     this.n += 1
   }
 }
