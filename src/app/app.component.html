@@ -1,14 +1,10 @@
 <app-navbar (filtrar)="searchPokemon($event)"></app-navbar>
-<main>
-  <div class="contenedor">
+<main class="font-mono">
+  <div class="contenedor"  infiniteScroll [infiniteScrollDistance]="2"  (scrolled)="onScroll()">
     <div *ngIf="pokemonsFiltrados.length > 0; else sinResultados">
       <h1 class="text-3xl mb-8">Pokedex en angular</h1>
       <div class="pokemons">
-        <app-tarjeta [datos]="pokemon.name" *ngFor=" let pokemon of pokemonsFiltrados"></app-tarjeta>
-      </div>
-
-      <div *ngIf="mostrarMas" class="contenedor-b">
-        <a class="boton" (click)="loadMore()">Ver mas</a>
+        <app-tarjeta [datos]="pokemon.name" *ngFor="let pokemon of pokemonsFiltrados"></app-tarjeta>
       </div>
     </div>
   </div>

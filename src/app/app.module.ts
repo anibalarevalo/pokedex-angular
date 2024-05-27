@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { TarjetaComponent } from './componentes/tarjeta/tarjeta.component';
 import { FormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

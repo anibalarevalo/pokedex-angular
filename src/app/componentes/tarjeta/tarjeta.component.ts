@@ -1,12 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 import { Pokemon } from 'src/app/interfaces/pokemon';
 import { PokemonService } from 'src/app/services/pokemon.service';
-
-interface data {
-  name: string;
-  url: string
-}
 
 @Component({
   selector: 'app-tarjeta',

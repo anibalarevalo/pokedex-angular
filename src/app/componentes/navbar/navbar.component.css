@@ -1,5 +1,5 @@
 .navbar {
-  @apply sticky top-0 h-[80px] w-auto bg-[#F44910] z-[1] py-0 px-[80px] flex items-center justify-between;
+  @apply sticky top-0 h-[80px] w-auto bg-[#F44910] z-[1] px-[80px] flex items-center justify-around;
 }
 
 .logo img {
@@ -7,11 +7,11 @@
 }
 
 .buscador {
-  @apply h-[80%] w-[40%] text-[1rem] pl-[10px] bg-[#fdfaf2] text-white;
+  @apply h-[80%] w-[20%] text-[1rem] pl-[10px] bg-[#fdfaf2] text-black;
   border: solid 1px white;
   border-radius: 15px;
 }
 
 .buscador::placeholder {
-  @apply text-[#acd0d6]
+  @apply text-[#23393d]
 }

@@ -1,14 +1,18 @@
 <div class="contenedor">
-  <p>#{{data?.id}}</p>
-
-  <div [ngClass]="data && data.types[0].type.name" class="pokemon-img">
-    <img [src]="!shiny ? data?.sprites?.front_default : data?.sprites?.front_shiny" (load)="cargandoImg=false"/>
-    <div *ngIf="cargandoImg" class="loadingContainer" [ngClass]="data && data.types[0].type.name">
+  <ng-container *ngIf="data">
+    <p>#{{data.id}}</p>
+  
+    <div [ngClass]="data.types[0].type.name" class="pokemon-img cursor-pointer" (click)="pokemonCry.play()">
+      <img [src]="!shiny ? data.sprites.front_default : data.sprites.front_shiny" (load)="cargandoImg=false"/>
+      <audio [src]="data.cries.latest" class="invisible" #pokemonCry></audio>
+      <div *ngIf="cargandoImg" class="loadingContainer" [ngClass]="data && data.types[0].type.name">
         <div class="loading"></div>
+      </div>
     </div>
-  </div>
-
-  <a class="capitalize">{{data?.name}}</a>
-  <p class="tipos"><span [ngClass]="tipo.type.name" *ngFor="let tipo of data?.types">{{tipo.type.name}}</span></p>
-  <input type="checkbox" class="star" (click)="mostrarShiny()"/>
-<div *ngIf="cargando" class="preloader">
+  
+    <a class="capitalize">{{data.name}}</a>
+    <p class="tipos"><span [ngClass]="tipo.type.name" *ngFor="let tipo of data.types">{{tipo.type.name}}</span></p>
+    <input type="checkbox" class="star" (click)="mostrarShiny()"/>
+  </ng-container>
+  <div *ngIf="cargando" class="preloader"></div>
+</div>
