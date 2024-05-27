@@ -6,12 +6,11 @@ import { PokemonService } from './services/pokemon.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  url: string = '?limit=1302&offset=0'
+  url: string = '?limit=1025&offset=0'
   pokemons: any = [];
   pokemonsFiltrados: any = [];
   n: number = 1;
-  m: number = 10;
-  mostrarMas = true;
+  m: number = 25;
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -30,16 +29,17 @@ export class AppComponent implements OnInit {
   searchPokemon(e: string) {
     if (e) {
       this.pokemonsFiltrados = this.pokemons.filter((p: any) => p.name.toLowerCase().includes(e.toLowerCase())).splice(0, this.m);
-      this.mostrarMas = false
     } else {
-      this.pokemonsFiltrados = [... this.pokemons].splice(0, this.m)
-      this.mostrarMas = true
+      this.pokemonsFiltrados = [... this.pokemons].splice(0, this.m);
     }
-    console.log(this.mostrarMas)
   }
 
   loadMore() {
-    this.pokemonsFiltrados = this.pokemonsFiltrados.concat([... this.pokemons].splice(this.m * this.n, this.m))
-    this.n += 1
+    this.pokemonsFiltrados = this.pokemonsFiltrados.concat([... this.pokemons].splice(this.m * this.n, this.m));
+    this.n += 1;
+  }
+
+  onScroll() {
+    this.loadMore();
   }
 }

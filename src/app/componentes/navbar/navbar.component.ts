@@ -6,14 +6,11 @@ import { Component,  EventEmitter,  OnInit, Output } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  
   @Output() filtrar = new EventEmitter();
-  searchText: string = "";
+  searchText?: string;
   constructor() { }
 
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   buscar() {
     this.filtrar.emit(this.searchText);
